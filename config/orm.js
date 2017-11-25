@@ -3,31 +3,42 @@ const connection = require("./connection.js");
 // Object Relational Mapper (ORM)
 
 var orm = {
-    selectAll: function(table, orderBy){
+    selectAll: function(table, orderBy, callb){
         var queryString = "SELECT * FROM ?? ORDER BY ?? ASC";
         connection.query(queryString,
                         [table, orderBy],
-                        (err, result) => {
-            console.log(result);
+                        (error, result) => {
+             if(error){
+                console.log(error);
+             } else{
+                callb(result);
+            }
         });
     },
-    insertOne: function(table, setObj){
+    insertOne: function(table, setObj, callb){
         var queryString = "INSERT INTO ?? SET ??";
         connection.query(queryString,
                         [table, setObj],
-                        (err, result) => {
-            console.log(result);
+                        (error, result) => {
+            if(error){
+                console.log(error);
+             } else{
+                callb(result);
+            }
         });
     },
-    updateOne: function(table, setObj){
+    updateOne: function(table, setObj, callb){
         var queryString = "UPDATE ?? SET ??";
         connection.query(queryString,
                         [table, setObj],
-                        (err, result) => {
-            console.log(result);
+                        (error, result) => {
+            if(error){
+                console.log(error);
+             } else{
+                callb(result);
+            }
         });
     }
-
 };
 
 module.exports = orm;
