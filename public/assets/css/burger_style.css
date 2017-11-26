@@ -15,13 +15,11 @@ button{
 	cursor: pointer;
 }
 
-li{
-	margin: 5px;
-}
-#uneaten li{
+.uneaten, .eaten{
 	background-color: #F0FFFF;
+	padding: 10px;
 }
 
-#buttons{
-	list-style-type: none;
+.eaten{
+	color: lightgrey;
 }
