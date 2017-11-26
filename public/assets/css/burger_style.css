@@ -18,6 +18,8 @@ button{
 .uneaten, .eaten{
 	background-color: #F0FFFF;
 	padding: 10px;
+	overflow: scroll;
+	max-height: 50px;
 }
 
 .eaten{

@@ -8,33 +8,45 @@
   </div>
 
   <div class="row">
+
+    <div class="col-2">
+    </div>
     <!-- Uneaten burgers column -->
-    <div class="col-6 text-center">
+    <div class="col text-center mr-3">
       <div class="row">
       {{#each burgers}}
         {{#unless devoured}}
-          <div class="col-6 uneaten mb-3" data-id="{{id}}">
+          <div class="col-8 uneaten mb-2" data-id="{{id}}">
               {{id}}. {{burger_name}}
           </div>
-          <div class="col-6">
+          <div class="col-4 mt-2">
             <button type="button" class="btn btn-light btn-sm eat" data-id="{{id}}">Devour it!</button>
           </div>
         {{/unless}}
       {{/each}}
       </div>
     </div>
+    <div class="col-1">
+    </div>    
     <!-- Eaten burgers column -->
-    <div class="col-6 text-center">
+    <div class="col text-left ml-3">
       <div class="row">
       {{#each burgers}}
         {{#if devoured}}
-        <div class="col-12 eaten mb-3" data-id="{{id}}">
+        <div class="col-10 eaten mb-3" data-id="{{id}}">
             {{id}}. {{burger_name}}
+        </div>
+        <div class="col-2">
         </div>
         {{/if}}
       {{/each}}
       </div>
     </div>
+
+    <div class="col-2">
+    </div>
+    <div class="w-100"></div>
+    <!-- Creates a new line -->
   </div>
 
   <div class="row">
