@@ -2,6 +2,7 @@ const connection = require("./connection.js");
 
 // Object Relational Mapper (ORM)
 
+// Provide select all, insert one, and update one.
 var orm = {
     selectAll: function(table, orderBy, callb){
         var queryString = "SELECT * FROM ?? ORDER BY ?? ASC";
@@ -16,7 +17,7 @@ var orm = {
         });
     },
     insertOne: function(table, setObj, callb){
-        var queryString = "INSERT INTO ?? SET ??";
+        var queryString = "INSERT INTO ?? SET ?";
         connection.query(queryString,
                         [table, setObj],
                         (error, result) => {
