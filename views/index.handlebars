@@ -8,20 +8,35 @@
   </div>
 
   <div class="row">
-    <div class="col-6">
-      <ol>
+    <div class="col-3 text-center">
+      <ol id="uneaten">
         {{#each burgers}}
           {{#unless devoured}}
-            {{> burgers/burger}}
+            <li class="mb-3">
+              {{burger_name}}
+            </li>
           {{/unless}}
         {{/each}}
       </ol>
     </div>
-    <div class="col-6">
-      <ol>
+    <div class="col-2">
+      <ol id="buttons">
+      {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+          <button type="button" class="btn btn-light btn-sm eat" data-id="{{id}}">Devour it!</button>
+        </li>
+        {{/unless}}
+      {{/each}}
+      </ol>
+    </div>
+    <div class="col-3">
+      <ol id="eaten">
         {{#each burgers}}
           {{#if devoured}}
-            {{> burgers/burger}}
+            <li class="mb-3">
+              {{burger_name}}
+            </li>
           {{/if}}
         {{/each}}
       </ol>

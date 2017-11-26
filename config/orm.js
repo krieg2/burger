@@ -27,10 +27,10 @@ var orm = {
             }
         });
     },
-    updateOne: function(table, setObj, callb){
-        var queryString = "UPDATE ?? SET ??";
+    updateOne: function(table, setObj, id, callb){
+        var queryString = "UPDATE ?? SET ? WHERE id = ?";
         connection.query(queryString,
-                        [table, setObj],
+                        [table, setObj, id],
                         (error, result) => {
             if(error){
                 console.log(error);

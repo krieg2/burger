@@ -14,9 +14,15 @@ router.get("/", function(req, res){
   });
 });
 
-router.post("/api/burger", function(req, res){
+router.post("/api/newburger", function(req, res){
   burger.create(req.body.name, function(result){
     res.json({ id: result.insertId });
+  });
+});
+
+router.put("/api/burger/:id", function(req, res){
+  burger.update(req.params.id, 1, function(result){
+    res.status(200).end();
   });
 });
 

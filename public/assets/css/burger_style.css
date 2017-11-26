@@ -14,3 +14,14 @@ html, body{
 button{
 	cursor: pointer;
 }
+
+li{
+	margin: 5px;
+}
+#uneaten li{
+	background-color: #F0FFFF;
+}
+
+#buttons{
+	list-style-type: none;
+}

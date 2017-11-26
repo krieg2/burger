@@ -12,9 +12,9 @@ var burger = {
       callb(result);
     });
   },
-  update: function(state, callb){
-  	var vals = {devoured: state};
-    orm.updateOne("burgers", vals, (result) => {
+  update: function(id, state, callb){
+  	var vals = {devoured: parseInt(state)};
+    orm.updateOne("burgers", vals, id, (result) => {
       callb(result);
     });
   }
